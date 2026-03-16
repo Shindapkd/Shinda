@@ -14,7 +14,8 @@ export default function Experience() {
         "Strengthened machine learning fundamentals through mentor-led and self-paced modules, including live doubt-clearing sessions.",
         "Enhanced industry readiness by completing an internship-integrated program.",
       ],
-      hoverImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop", // placeholder
+      logo: "/photos/corizo.png",
+      hoverImage: "/photos/gmg.png", // placeholder
       hoverDetails: "Trained and evaluated machine learning models locally. Delivered deep insights via EDA and evaluated predictions utilizing advanced regression metrics. Trained and evaluated machine learning models locally. Delivered deep insights via EDA and evaluated predictions utilizing advanced regression metrics",
       tech: ["Python", "Machine Learning"],
       type: "Experience",
@@ -47,7 +48,11 @@ export default function Experience() {
 
         <div className="space-y-12">
           {experiences.map((exp, idx) => (
-            <div
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: idx * 0.1 }}
+              viewport={{ once: true, margin: "-50px" }}
               key={idx}
               onMouseEnter={() => setHoveredIndex(idx)}
               onMouseLeave={() => setHoveredIndex(null)}
@@ -55,9 +60,18 @@ export default function Experience() {
               className="group relative p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md transition-all duration-500 hover:bg-white/10 cursor-default"
             >
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+              <div className="flex items-center gap-4">
+
+                    {/* Company Logo */}
+                 <img
+                      src={exp.logo}
+                      alt={exp.company}
+                      className="w-12 h-12 object-contain rounded-lg bg-white/5 p-1 border border-white/10"
+                  />
                 <div>
                   <h4 className="text-2xl font-semibold text-white tracking-tight">{exp.role}</h4>
                   <div className="text-lg text-white/80 mt-1">{exp.company}</div>
+                </div>
                 </div>
                 <div className="mt-4 md:mt-0 px-4 py-2 rounded-full border border-white/20 bg-white/5 text-sm font-medium text-white">
                   {exp.date}
@@ -82,7 +96,7 @@ export default function Experience() {
                   ))}
                 </div>
               )}
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

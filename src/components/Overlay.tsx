@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { TypeAnimation } from "react-type-animation";
 
 export default function Overlay({ containerRef }: { containerRef: React.RefObject<HTMLDivElement | null> }) {
   const { scrollYProgress } = useScroll({
@@ -28,16 +29,29 @@ const y3 = useTransform(scrollYProgress, [0.55, 0.75], [80, -60]);
         
         {/* Section 1 */}
       <motion.div 
-        className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex flex-col items-center text-center"
+        className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex flex-col items-center text-center z-10"
         style={{ opacity: opacity1, y: y1 }}
       >
-        <h1 className="text-4xl md:text-6xl lg:text-8xl font-medium tracking-tight text-white drop-shadow-2xl">
+        <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold tracking-tight text-white drop-shadow-[0_4px_10px_rgba(255,255,255,0.3)] gold-shine-text">
           SHINDA PEEDIKAKANDY
         </h1>
 
-        <p className="mt-4 text-xl md:text-3xl lg:text-4xl text-white font-light">
-          AI & ML Engineer
-        </p>
+        <div className="mt-4 text-xl md:text-3xl lg:text-4xl text-white font-medium h-12 flex items-center justify-center drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+          <TypeAnimation
+            sequence={[
+              'AI/ML Engineer',
+              2000,
+              'Computer Science Student',
+              2000,
+              'Software Developer',
+              2000,
+            ]}
+            wrapper="span"
+            speed={50}
+            repeat={Infinity}
+            className="inline-block"
+          />
+        </div>
       </motion.div>
 
         {/* Section 2 */}
@@ -46,8 +60,8 @@ const y3 = useTransform(scrollYProgress, [0.55, 0.75], [80, -60]);
           style={{ opacity: opacity2, y: y2 }}
         >
           <h2 className="text-3xl md:text-5xl lg:text-7xl font-medium tracking-tight text-white leading-tight drop-shadow-2xl">
-            I design <br />
-            <span className="text-amber-400">immersive digital experiences.</span>
+            I build <br />
+            <span className="text-amber-400">AI-powered solutions.</span>
           </h2>
         </motion.div>
 
@@ -57,8 +71,8 @@ const y3 = useTransform(scrollYProgress, [0.55, 0.75], [80, -60]);
           style={{ opacity: opacity3, y: y3 }}
         >
           <h2 className="text-3xl md:text-5xl lg:text-7xl font-medium tracking-tight text-white leading-tight drop-shadow-2xl">
-            Where design <br />
-            <span className="text-amber-400">meets engineering.</span>
+            Where data<br />
+            <span className="text-amber-400">evolves into intelligence.</span>
           </h2>
         </motion.div>
         

@@ -26,9 +26,9 @@ export default function Projects() {
       description: "Implemented an end-to-end face recognition pipeline using HOG feature extraction and RBF-kernel SVM, achieving 92% test accuracy while maintaining fast, GPU-free real-time inference.",
       more_details: "Improved robustness to lighting and image quality variations by integrating CLAHE normalization, adaptive face cropping, and outlier removal reducing noisy samples by 4% and stabilizing model performance.",
       tech: ["Python", "OpenCV", "scikit-image", "scikit-learn", "NumPy", "Pandas"],
-      github: "https://github.com/Shindapeedikakandy",
+      github: "https://github.com/Shindapkd",
       date: "Dec 2025",
-      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=2070&auto=format&fit=crop"
+      image: "/photos/fcrpj.png"
     },
     {
       id: 1,
@@ -36,9 +36,9 @@ export default function Projects() {
       description: "Developed an SVM-based image classification model for genetic disorder prediction, achieving 92% accuracy through optimized preprocessing and feature extraction.",
       more_details: "Applied SMOTE to rebalance the dataset and built a fast, user-friendly GUI for real-time predictions under 2 seconds per image using a clean, modular architecture.",
       tech: ["Python", "SVM", "imbalanced-learn", "OpenCV", "Tkinter", "NumPy", "Pandas"],
-      github: "https://github.com/Shindapeedikakandy",
+      github: "https://github.com/Shindapkd",
       date: "Apr 2025",
-      image: "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?q=80&w=2070&auto=format&fit=crop"
+      image: "/photos/gndpj.png"
     }
   ];
 
@@ -74,16 +74,20 @@ export default function Projects() {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
             >
-              <h3 className="text-3xl md:text-5xl font-medium tracking-tight mb-16 text-white text-center">
+              <h3 className="text-3xl md:text-5xl font-semibold tracking-tight mb-16 text-white text-center drop-shadow-md">
                 Featured <span className="text-amber-500">Projects</span>
               </h3>
 
               <div className="flex flex-col gap-10">
-                {projects.map((proj) => (
-                  <div
+                {projects.map((proj, idx) => (
+                  <motion.div
                     key={proj.id}
+                    initial={{ opacity: 0, x: idx % 2 === 0 ? -50 : 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    viewport={{ once: true, margin: "-50px" }}
                     onClick={() => setSelectedProjectId(proj.id)}
-                    className="group relative flex flex-col md:flex-row gap-8 p-6 md:p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md overflow-hidden cursor-pointer transition-all duration-500 hover:scale-[1.01] hover:bg-white/10 hover:shadow-[0_0_40px_rgba(251,191,36,0.05)] hover:border-amber-500/30"
+                    className="group relative flex flex-col md:flex-row gap-8 p-6 md:p-8 rounded-2xl bg-black/40 border border-white/20 backdrop-blur-md overflow-hidden cursor-pointer transition-all duration-500 hover:scale-[1.01] hover:bg-black/60 hover:shadow-[0_0_20px_rgba(251,191,36,0.2)] hover:border-amber-500/50"
                   >
                     <div className="w-full md:w-2/5 aspect-video md:aspect-[4/3] rounded-xl overflow-hidden shrink-0 relative">
                       <img
@@ -96,15 +100,15 @@ export default function Projects() {
 
                     <div className="w-full md:w-3/5 flex flex-col relative z-10 justify-center">
                       <div className="flex justify-between items-start mb-4">
-                        <h4 className="text-2xl font-semibold tracking-tight text-white group-hover:text-amber-400 transition-colors">
+                        <h4 className="text-2xl font-bold tracking-tight text-white group-hover:text-amber-400 transition-colors drop-shadow-sm">
                           {proj.title}
                         </h4>
                       </div>
-                      <span className="inline-block text-xs bg-white/10 text-amber-300 px-3 py-1 rounded-full whitespace-nowrap mb-4 w-max">
+                      <span className="inline-block text-sm font-medium bg-amber-500/20 text-amber-300 px-3 py-1 rounded-full whitespace-nowrap mb-4 w-max border border-amber-500/30">
                         {proj.date}
                       </span>
                       
-                      <p className="text-white/80 text-base leading-relaxed mb-6 line-clamp-3">
+                      <p className="text-white/95 font-medium text-base leading-relaxed mb-6 line-clamp-3 drop-shadow-sm">
                         {proj.description}
                       </p>
                       
@@ -116,11 +120,11 @@ export default function Projects() {
                         ))}
                       </div>
                       
-                      <div className="mt-auto font-medium text-sm text-amber-500 tracking-wide flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <div className="mt-auto font-bold text-sm text-amber-500 tracking-wide flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                         View Full Details <ArrowRight className="w-4 h-4" />
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>
@@ -153,7 +157,7 @@ export default function Projects() {
                   {selectedProject.date}
                 </div>
                 
-                <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-white mb-8 leading-tight">
+                <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-8 leading-tight drop-shadow-md">
                   {selectedProject.title}
                 </h2>
 
@@ -166,13 +170,13 @@ export default function Projects() {
                 </div>
 
                 <div className="prose prose-invert max-w-none mb-16">
-                  <h3 className="text-2xl font-medium text-amber-500 mb-6 tracking-tight">Overview</h3>
-                  <p className="text-white/80 text-xl leading-relaxed mb-10">
+                  <h3 className="text-2xl font-semibold text-amber-400 mb-6 tracking-tight drop-shadow-sm">Overview</h3>
+                  <p className="text-white font-medium text-xl leading-relaxed mb-10 drop-shadow-sm">
                     {selectedProject.description}
                   </p>
                   
-                  <h3 className="text-xl font-medium text-amber-500 mb-6 tracking-tight">Technical Details & Implementation</h3>
-                  <p className="text-white/70 text-lg leading-relaxed">
+                  <h3 className="text-xl font-semibold text-amber-400 mb-6 tracking-tight drop-shadow-sm">Technical Details & Implementation</h3>
+                  <p className="text-white/95 font-medium text-lg leading-relaxed drop-shadow-sm">
                     {selectedProject.more_details}
                   </p>
                 </div>

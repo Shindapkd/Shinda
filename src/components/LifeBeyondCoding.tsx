@@ -6,12 +6,11 @@ import { useEffect, useState } from "react";
 
 export default function LifeBeyondCoding() {
   const photos = [
-    "https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=1200",
-    "https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=1200",
-    "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200",
-    "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=1200",
-    "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200",
-    "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200",
+    "/photos/photo1.jpeg",
+    "/photos/photo2.jpeg",
+    "/photos/photo3.jpeg",
+    "/photos/photo4.jpeg",
+    "/photos/photo5.jpeg",
   ];
 
   const [index, setIndex] = useState(0);
@@ -45,7 +44,13 @@ export default function LifeBeyondCoding() {
     <section className="relative z-20 py-28 overflow-hidden bg-[#121212]">
 
       {/* Heading */}
-      <div className="max-w-6xl mx-auto px-6 md:px-12 text-center mb-20">
+      <motion.div 
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="max-w-6xl mx-auto px-6 md:px-12 text-center mb-20"
+      >
         <h3 className="text-3xl md:text-5xl font-medium tracking-tight text-white mb-6">
           Life Beyond <span className="text-amber-500">Coding</span>
         </h3>
@@ -54,7 +59,7 @@ export default function LifeBeyondCoding() {
           Extracurricular activities, events, and moments that shape my personal growth
           beyond development and technology.
         </p>
-      </div>
+      </motion.div>
 
       {/* Carousel */}
       <div
@@ -83,11 +88,11 @@ export default function LifeBeyondCoding() {
                 duration: 0.9,
                 ease: "easeInOut",
               }}
-              className="absolute w-[260px] h-[360px] rounded-3xl overflow-hidden border border-white/10"
+              className="absolute w-[260px] h-[420px] rounded-3xl overflow-hidden border border-white/10"
             >
               <img
                 src={src}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
                 alt=""
               />
             </motion.div>

@@ -4,10 +4,10 @@ import React from "react";
 import { motion } from "framer-motion";
 export default function About() {
   const skills = [
-    { category: "Languages", items: ["Python", "Java", "C++"] },
-    { category: "Web Technologies", items: ["HTML", "CSS"] },
-    { category: "Tools/Platforms", items: ["Google Colab", "GitHub", "Automation Anywhere"] },
-    { category: "Soft Skills", items: ["Adaptability", "Leadership", "Hard-working", "Problem-Solving"] },
+    { category: "ML/AI Frameworks", items: ["Scikit-Learn", "OpenCV", "NumPy", "Pandas", "SMOTE"] },
+    { category: "Languages & Scripting", items: ["Python", "Java", "C++", "SQL basics"] },
+    { category: "Cloud & DevOps", items: ["Google Colab", "Automation Anywhere", "Linux/OS basics"] },
+    { category: "Version Control & Tools", items: ["Git", "GitHub", "Jupyter", "VS Code"] },
   ];
 
   return (
@@ -31,35 +31,21 @@ export default function About() {
               <li className="flex gap-3">
                 <span className="text-amber-500 mt-1">•</span>
                 <span>
-                  I'm <span className="text-white font-medium">Shinda Peedikakandy</span>, a Computer Science and Engineering student at Lovely Professional University.
+                  I am <span className="text-white font-medium">Shinda Peedikakandy</span>, an aspiring AI/ML Engineer and Computer Science student at Lovely Professional University.
                 </span>
               </li>
 
               <li className="flex gap-3">
                 <span className="text-amber-500 mt-1">•</span>
                 <span>
-                  Passionate about artificial intelligence, machine learning, and building impactful software systems.
+                  I am deeply drawn to artificial intelligence and machine learning because of their profound ability to turn raw data into scalable, real-world solutions.
                 </span>
               </li>
 
               <li className="flex gap-3">
                 <span className="text-amber-500 mt-1">•</span>
                 <span>
-                  Experienced in programming with <span className="text-white">Python</span> and <span className="text-white">Java</span>.
-                </span>
-              </li>
-
-              <li className="flex gap-3">
-                <span className="text-amber-500 mt-1">•</span>
-                <span>
-                  Interested in developing optimized computer vision pipelines and predictive machine learning models.
-                </span>
-              </li>
-
-              <li className="flex gap-3">
-                <span className="text-amber-500 mt-1">•</span>
-                <span>
-                  Always exploring innovative solutions and learning new technologies to solve real-world problems.
+                  My career goal is to architect highly optimized computer vision pipelines and intelligent predictive models that drive measurable industry impact.
                 </span>
               </li>
 
@@ -70,22 +56,71 @@ export default function About() {
              <h3 className="text-3xl font-medium tracking-tight mb-8 text-white">
               My <span className="text-amber-500">Skills</span>
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {skills.map((skill, idx) => (
-                <div key={idx} className="flex flex-col">
-                  <h4 className="text-sm font-semibold uppercase tracking-widest text-amber-500/80 mb-4">{skill.category}</h4>
-                  <div className="flex flex-wrap gap-3">
-                    {skill.items.map((item, i) => (
-                      <span
-                        key={i}
-                        className="text-sm px-4 py-2 rounded-full bg-white/5 border border-white/10 text-white/90 hover:bg-white/10 hover:border-amber-500/30 transition-colors"
-                      >
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
+            {/* Tools & Platforms Table */}
+            <div className="overflow-hidden rounded-xl border border-white/10 bg-black/40 shadow-xl">
+              <table className="w-full text-left text-sm text-white/80">
+                <thead className="bg-white/5 border-b border-white/10">
+                  <tr>
+                    <th className="px-6 py-4 font-semibold text-amber-500 uppercase tracking-widest text-xs w-1/3">Category</th>
+                    <th className="px-6 py-4 font-semibold text-amber-500 uppercase tracking-widest text-xs w-2/3">Proficiencies</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-white/5">
+                  {skills.map((skill, idx) => (
+                    <tr key={idx} className="hover:bg-white/5 transition-colors">
+                      <td className="px-6 py-4 font-medium text-white/90">{skill.category}</td>
+                      <td className="px-6 py-4">
+                        <div className="flex flex-wrap gap-2">
+                          {skill.items.map((item, i) => (
+                            <span key={i} className="px-3 py-1 rounded bg-white/10 border border-white/5 text-xs text-white">
+                              {item}
+                            </span>
+                          ))}
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* Soft Skills & Activities */}
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-black/30 p-6 rounded-xl border border-white/5">
+                <h3 className="text-xl font-medium mb-5 text-white tracking-tight">
+                  Soft <span className="text-amber-500">Skills</span>
+                </h3>
+                <ul className="space-y-3 text-white/80 text-base">
+                  <li className="flex items-start gap-3">
+                    <span className="text-amber-500 mt-1 text-sm">✦</span> 
+                    <span>Analytical Problem-Solving</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-amber-500 mt-1 text-sm">✦</span> 
+                    <span>Adaptability & Fast Learning</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-amber-500 mt-1 text-sm">✦</span> 
+                    <span>Cross-Functional Communication</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-black/30 p-6 rounded-xl border border-white/5">
+                <h3 className="text-xl font-medium mb-5 text-white tracking-tight">
+                  Technical <span className="text-amber-500">Activities</span>
+                </h3>
+                <ul className="space-y-3 text-white/80 text-base">
+                  <li className="flex items-start gap-3">
+                    <span className="text-amber-500 mt-1 text-sm">✦</span> 
+                    <span>TATA GenAI Data Analytics Job Simulation (Forage)</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-amber-500 mt-1 text-sm">✦</span> 
+                    <span>Active participant in algorithmic programming contests</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </motion.div>

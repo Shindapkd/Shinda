@@ -44,12 +44,14 @@ export default function Certifications() {
       org: "Forage",
       date: "Nov 2025",
       desc: "Worked on data cleaning, exploratory data analysis, visualization and AI-assisted insights for business decision making.",
+      image: "/photos/tata.jpg"
     },
     {
       title: "Johnson & Johnson MedTech Robotics and Controls Job Simulation",
       org: "Forage",
       date: "Nov 2025",
       desc: "Completed robotics control design tasks analyzing system delays and improving performance reliability.",
+      image: "/photos/j&j.png"
     },
   ];
 
@@ -189,25 +191,34 @@ export default function Certifications() {
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               viewport={{ once: true }}
               key={idx}
-              className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+              className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors flex flex-col md:flex-row gap-6 items-start"
             >
-              <h4 className="text-xl font-semibold text-white">
-                {ach.title}
-              </h4>
+              {ach.image && (
+                <img
+                  src={ach.image}
+                  alt={ach.org}
+                  className="w-20 h-20 object-contain rounded-xl bg-white/5 p-3 border border-white/10 shrink-0"
+                />
+              )}
+              <div className="flex-1">
+                <h4 className="text-xl font-semibold text-white">
+                  {ach.title}
+                </h4>
 
-              <div className="flex justify-between items-center mt-3 mb-4">
-                <span className="text-white/80 text-sm font-medium">
-                  {ach.org}
-                </span>
+                <div className="flex justify-between items-center mt-3 mb-4">
+                  <span className="text-white/80 text-sm font-medium">
+                    {ach.org}
+                  </span>
 
-                <span className="text-amber-400 text-sm px-3 py-1 bg-white/5 rounded-full">
-                  {ach.date}
-                </span>
+                  <span className="text-amber-400 text-sm px-3 py-1 bg-white/5 rounded-full">
+                    {ach.date}
+                  </span>
+                </div>
+
+                <p className="text-white/70 text-sm leading-relaxed">
+                  {ach.desc}
+                </p>
               </div>
-
-              <p className="text-white/70 text-sm leading-relaxed">
-                {ach.desc}
-              </p>
             </motion.div>
           ))}
         </div>

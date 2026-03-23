@@ -66,7 +66,7 @@ export default function Experience() {
                  <img
                       src={exp.logo}
                       alt={exp.company}
-                      className="w-12 h-12 object-contain rounded-lg bg-white/5 p-1 border border-white/10"
+                      className="w-20 h-20 object-contain rounded-xl bg-white/5 p-3 border border-white/10"
                   />
                 <div>
                   <h4 className="text-2xl font-semibold text-white tracking-tight">{exp.role}</h4>

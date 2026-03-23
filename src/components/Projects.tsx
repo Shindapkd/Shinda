@@ -8,6 +8,7 @@ type ProjectType = {
   id: number;
   title: string;
   description: string;
+  skills_demonstrated: string;
   more_details: string;
   tech: string[];
   github: string;
@@ -22,21 +23,23 @@ export default function Projects() {
   const projects: ProjectType[] = [
     {
       id: 0,
-      title: "Adaptive Facial Recognition System for Real-Time Attendance Monitoring",
-      description: "Implemented an end-to-end face recognition pipeline using HOG feature extraction and RBF-kernel SVM, achieving 92% test accuracy while maintaining fast, GPU-free real-time inference.",
+      title: "Adaptive Facial Recognition System for Real-Time Attendance",
+      description: "Designed and implemented an end-to-end face recognition pipeline for fast, GPU-free real-time attendance tracking with 92% test accuracy.",
+      skills_demonstrated: "Computer Vision Pipeline Design, Image Normalization, SVM Classification, Real-time Optimization",
       more_details: "Improved robustness to lighting and image quality variations by integrating CLAHE normalization, adaptive face cropping, and outlier removal reducing noisy samples by 4% and stabilizing model performance.",
       tech: ["Python", "OpenCV", "scikit-image", "scikit-learn", "NumPy", "Pandas"],
-      github: "https://github.com/Shindapkd",
+      github: "https://github.com/Shindapkd/Supervised_Face_Recognition_System_Using_Classification",
       date: "Dec 2025",
       image: "/photos/fcrpj.png"
     },
     {
       id: 1,
       title: "Identification of Genetic Disorder in the Medical Field",
-      description: "Developed an SVM-based image classification model for genetic disorder prediction, achieving 92% accuracy through optimized preprocessing and feature extraction.",
+      description: "Developed an SVM-based image classification model for precise genetic disorder prediction, achieving 92% accuracy through optimized feature extraction.",
+      skills_demonstrated: "Data Balancing (SMOTE), Image Classification, GUI Development, Modular Architecture Design",
       more_details: "Applied SMOTE to rebalance the dataset and built a fast, user-friendly GUI for real-time predictions under 2 seconds per image using a clean, modular architecture.",
       tech: ["Python", "SVM", "imbalanced-learn", "OpenCV", "Tkinter", "NumPy", "Pandas"],
-      github: "https://github.com/Shindapkd",
+      github: "https://github.com/Shindapkd/Support-Vector-Machine-for-Identification-of-Genetical-Disorders-in-Medical-Field",
       date: "Apr 2025",
       image: "/photos/gndpj.png"
     }
@@ -108,9 +111,14 @@ export default function Projects() {
                         {proj.date}
                       </span>
                       
-                      <p className="text-white/95 font-medium text-base leading-relaxed mb-6 line-clamp-3 drop-shadow-sm">
+                      <p className="text-white/90 font-medium text-base leading-relaxed mb-4 line-clamp-3 drop-shadow-sm">
                         {proj.description}
                       </p>
+                      
+                      <div className="mb-6">
+                        <span className="text-amber-500 font-semibold text-sm">Skills Demonstrated: </span>
+                        <span className="text-white/80 text-sm">{proj.skills_demonstrated}</span>
+                      </div>
                       
                       <div className="flex flex-wrap gap-2 mb-6">
                         {proj.tech.map((t, i) => (
@@ -171,8 +179,13 @@ export default function Projects() {
 
                 <div className="prose prose-invert max-w-none mb-16">
                   <h3 className="text-2xl font-semibold text-amber-400 mb-6 tracking-tight drop-shadow-sm">Overview</h3>
-                  <p className="text-white font-medium text-xl leading-relaxed mb-10 drop-shadow-sm">
+                  <p className="text-white font-medium text-xl leading-relaxed mb-6 drop-shadow-sm">
                     {selectedProject.description}
+                  </p>
+
+                  <h3 className="text-xl font-semibold text-amber-400 mb-6 tracking-tight drop-shadow-sm">Skills Demonstrated</h3>
+                  <p className="text-white font-medium text-lg leading-relaxed mb-10 drop-shadow-sm">
+                    {selectedProject.skills_demonstrated}
                   </p>
                   
                   <h3 className="text-xl font-semibold text-amber-400 mb-6 tracking-tight drop-shadow-sm">Technical Details & Implementation</h3>

@@ -74,7 +74,7 @@ export default function Connect() {
           <div className="absolute inset-0 bg-gradient-to-r from-amber-500/0 via-amber-500/10 to-amber-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-xl"></div>
           
           <h3 className="relative text-2xl md:text-4xl font-light text-center tracking-wide text-white/50 group-hover:text-white transition-colors duration-500">
-            Thanks for <span className="font-medium text-white/60 group-hover:text-amber-400 transition-colors duration-500">Visiting</span>
+            Thank You for <span className="font-medium text-white/60 group-hover:text-amber-400 transition-colors duration-500">Visiting</span>
           </h3>
           
           <div className="relative mt-4 flex justify-center gap-2">

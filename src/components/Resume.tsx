@@ -9,14 +9,14 @@ export default function Resume() {
 
   const cvs = {
     general: {
-      name: "General CV",
+      name: "Core Profile",
       filename: "Shinda_Peedikakandy_CV.pdf",
       path: "/Shinda_Peedikakandy_CV.pdf"
     },
     specialized: {
-      name: "Specialized CV",
-      filename: "Shinda_Specialized_CV.pdf",
-      path: "/Shinda_Specialized_CV.pdf"
+      name: "AI/ML Expertise",
+      filename: "Shinda_CV.pdf",
+      path: "/Shinda_CV.pdf"
     }
   };
 
@@ -43,7 +43,7 @@ export default function Resume() {
           <div className="flex flex-col items-center">
             <h3 className="text-xl font-medium text-white mb-4 flex items-center gap-2">
               <FileText className="w-5 h-5 text-amber-500" />
-              General CV
+              Core Profile
             </h3>
             <div className="relative group w-full max-w-sm cursor-pointer" onClick={() => setSelectedCV('general')}>
               <div className="w-full aspect-[1/1.4] bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-xl overflow-hidden border border-white/10 relative shadow-xl">
@@ -66,7 +66,7 @@ export default function Resume() {
                  <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40 backdrop-blur-[2px] z-10">
                    <button className="flex items-center gap-2 bg-amber-500 text-black px-8 py-3 rounded-full font-semibold tracking-wide hover:bg-amber-400 hover:shadow-[0_0_20px_rgba(251,191,36,0.5)] transition-all duration-300 scale-95 group-hover:scale-100">
                      <Eye className="w-5 h-5" />
-                     View General CV
+                     View Core Profile
                    </button>
                  </div>
               </div>
@@ -77,7 +77,7 @@ export default function Resume() {
           <div className="flex flex-col items-center">
             <h3 className="text-xl font-medium text-white mb-4 flex items-center gap-2">
               <FileText className="w-5 h-5 text-amber-500" />
-              Specialized CV
+              AI/ML Expertise
             </h3>
             <div className="relative group w-full max-w-sm cursor-pointer" onClick={() => setSelectedCV('specialized')}>
               <div className="w-full aspect-[1/1.4] bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-xl overflow-hidden border border-amber-500/20 relative shadow-xl">
@@ -100,7 +100,7 @@ export default function Resume() {
                  <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40 backdrop-blur-[2px] z-10">
                    <button className="flex items-center gap-2 bg-amber-500 text-black px-8 py-3 rounded-full font-semibold tracking-wide hover:bg-amber-400 hover:shadow-[0_0_20px_rgba(251,191,36,0.5)] transition-all duration-300 scale-95 group-hover:scale-100">
                      <Eye className="w-5 h-5" />
-                     View Specialized CV
+                     View AI/ML Expertise
                    </button>
                  </div>
               </div>

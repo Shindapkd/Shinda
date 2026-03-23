@@ -56,23 +56,21 @@ const y3 = useTransform(scrollYProgress, [0.55, 0.75], [80, -60]);
 
         {/* Section 2 */}
         <motion.div 
-          className="absolute left-8 md:left-24 top-1/2 -translate-y-1/2 max-w-xl"
+          className="absolute left-8 md:left-24 top-1/2 -translate-y-1/2 max-w-4xl"
           style={{ opacity: opacity2, y: y2 }}
         >
-          <h2 className="text-3xl md:text-5xl lg:text-7xl font-medium tracking-tight text-white leading-tight drop-shadow-2xl">
-            I build <br />
-            <span className="text-amber-400">AI-powered solutions.</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight text-white leading-tight drop-shadow-2xl">
+            Building intelligent systems that solve <span className="text-amber-400">real-world problems.</span>
           </h2>
         </motion.div>
 
         {/* Section 3 */}
         <motion.div 
-          className="absolute right-8 md:right-24 top-1/2 -translate-y-1/2 max-w-xl text-right"
+          className="absolute right-8 md:right-24 top-1/2 -translate-y-1/2 max-w-4xl text-right"
           style={{ opacity: opacity3, y: y3 }}
         >
-          <h2 className="text-3xl md:text-5xl lg:text-7xl font-medium tracking-tight text-white leading-tight drop-shadow-2xl">
-            Where data<br />
-            <span className="text-amber-400">evolves into intelligence.</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight text-white leading-tight drop-shadow-2xl">
+            Transforming raw data into <span className="text-amber-400">predictive intelligence.</span>
           </h2>
         </motion.div>
         

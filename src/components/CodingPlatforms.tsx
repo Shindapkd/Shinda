@@ -33,7 +33,7 @@ export default function CodingPlatforms() {
     {
       name: "LeetCode",
       username: "Shinda_Peedikakandy",
-      logo: "/photos/leetlg.png",
+      logo: "/photos/lc.webp",
       hoverImage: "/photos/leetcode.png",
       link: "https://leetcode.com/u/Shinda_Peedikakandy/",
       stats: ["152 Problems", "1479 Rating", "Top 50.98%"],
@@ -103,7 +103,7 @@ export default function CodingPlatforms() {
                 <img
                   src={platform.logo}
                   alt={platform.name}
-                  className="w-12 h-12 object-contain rounded-lg bg-white/5 p-2 border border-white/10"
+                  className="w-20 h-20 object-contain rounded-xl bg-white/5 p-3 border border-white/10"
                 />
 
                 <div>
